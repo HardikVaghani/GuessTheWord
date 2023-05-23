@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="scoreViewModel"
+            type="com.app.hardik.guesstheword.screens.score.ScoreViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/score_layout"
         android:layout_width="match_parent"
@@ -44,12 +49,14 @@
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="40" />
 
+<!--            android:onClick="@{()-> scoreViewModel.onPlayAgain()}"-->
         <Button
             android:id="@+id/play_again_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:text="@string/play_again"
+            android:onClick="@{()->scoreViewModel.onPlayAgain()}"
             android:theme="@style/GoButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
